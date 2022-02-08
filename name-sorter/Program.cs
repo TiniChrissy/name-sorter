@@ -25,10 +25,17 @@ namespace name_sorter
 
             var path = args[0];
             string[] lines = File.ReadAllLines(path, Encoding.UTF8); //unit test ,if empty return empty, if sorted, return sroted?? probably don't need that
+
+
             foreach (string line in lines)
             {
                 Console.WriteLine(line);
+                var fullName = line.Split(' ');
+                var lastName = fullName[fullName.Length-1];
+                Console.WriteLine(lastName);
             }
+
+            var sortedByLastName = 
         }
 
         static Boolean CheckIfTxtFile(string fileName)
@@ -48,6 +55,8 @@ namespace name_sorter
             return false;
         }
 
+        //set last name to last word of array
+        // sort entire thing by that index? 
         static object sortArrayOfNames(string[] names)
         {
             return names;
